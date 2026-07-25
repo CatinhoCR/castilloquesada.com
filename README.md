@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# castilloquesada.com
 
-## Getting Started
+Personal portfolio and case study site for **Andrés Castillo Quesada** —
+Senior Frontend Engineer & Architect / Creative Technologist.
 
-First, run the development server:
+**[castilloquesada.com](https://castilloquesada.com)**
+
+## About
+
+13 years of frontend engineering bridging design and interactive
+engineering — 3D/WebGL, motion, design systems, and full-stack
+architecture. This site is both a portfolio and a working example of the
+stack it describes: hand-built, token-driven, animation-first.
+
+## Stack
+
+- **Framework** — [Next.js](https://nextjs.org) (App Router), TypeScript
+- **Styling** — Tailwind CSS v4 (`@theme` design tokens) + SCSS modules
+  for animation-specific styling
+- **Motion** — [GSAP](https://gsap.com) + `@gsap/react`,
+  [Lenis](https://lenis.darkroom.engineering) for smooth scroll
+- **Deployment** — [Vercel](https://vercel.com)
+
+## Architecture notes
+
+- **Design tokens** live in a single source of truth (`lib/theme.css`),
+  consumed by both Tailwind utilities and SCSS modules. No hardcoded
+  colors, type sizes, or spacing in components — everything resolves
+  through a CSS variable.
+- **Type scale is fluid**, interpolated with `clamp()` between mobile
+  (390px) and desktop (1440px) design specs, rather than fixed
+  breakpoints.
+- **Motion tokens** (`lib/motion.ts`) centralize GSAP durations, eases,
+  and stagger values so animation timing stays consistent across the
+  site rather than being reinvented per component.
+- **UI components** use a `variant` prop pattern (e.g. `<Button
+  variant="main">`) rather than BEM-style CSS class modifiers, keeping
+  variants type-checked and wired directly into the token system.
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Branching
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `main` — production, always deployable, mirrors what's live on the
+  domain.
+- Feature branches per work cycle, merged into `main` when ready. Every
+  push gets an automatic Vercel preview deployment.
 
-## Learn More
+## Case studies
 
-To learn more about Next.js, take a look at the following resources:
+Three case studies are featured, presented as narrative summaries (role,
+scope, technical decisions) rather than asset showcases, in line with
+NDA constraints on the underlying client work:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Vans — 3D Shoe Customizer** — real-time product customization
+  (Vue + Three.js)
+- **Walmart Connect — Design System** — SCSS token/component library for
+  a multi-team ad platform
+- **Uniwatch** — AI-powered IP vigilance SaaS, built and led as sole
+  technical lead (NestJS, PostgreSQL, Python/TensorFlow, AWS)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+Site content and design are © Andrés Castillo Quesada. Code structure is
+shared for portfolio/demonstration purposes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[LinkedIn](https://linkedin.com/in/catinhocr) ·
+[GitHub](https://github.com/CatinhoCR)
