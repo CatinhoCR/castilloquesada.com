@@ -1,0 +1,16 @@
+/*
+  Hero.module.scss
+  Convention for this codebase: Tailwind handles layout/spacing/responsive;
+  SCSS modules own anything animated or structurally complex (clip-paths,
+  pseudo-element machinery, keyframe choreography, masked reveals).
+
+  Kept nearly empty at scaffold stage on purpose — it exists to prove the
+  sass pipeline compiles and to establish the pattern.
+*/
+
+.hero {
+  position: relative;
+
+  // Example of the kind of thing that lives here later:
+  // &::after { ... } grain/gradient overlays, masked reveals, etc.
+}
