@@ -5,6 +5,7 @@ Nothing here blocks Sunday's ship — review and prioritize once the site
 is live and the Monday post is out.
 
 ## Tooling
+
 - [ ] Install Vercel coding-agent plugin (`npx plugins add vercel/vercel-plugin`)
       — run in the terminal Claude Code uses. Gives the agent direct
       access to deployment status/logs/env vars instead of manual
@@ -14,6 +15,7 @@ is live and the Monday post is out.
       has real traffic post-launch (no signal before then).
 
 ## Content / structure
+
 - [ ] Case study **detail pages** — v1 ships all three narratives inline
       on the landing page; dedicated `/work/[slug]` pages with a reusable
       template are the cycle-2 upgrade.
@@ -21,6 +23,7 @@ is live and the Monday post is out.
       permission before embedding.
 
 ## Design
+
 - [ ] Export the Claude Design file as Standalone HTML → import via
       html.to.design into Figma, for your partner to review/tweak
       editable frames. Do this *after* she's seen the live preview URL,
@@ -32,7 +35,14 @@ is live and the Monday post is out.
       export's computed styles).
 - [ ] Verify: outcome-stat mobile font size (also a guess, same reason).
 
+## DNS
+- [ ] Revert `castilloquesada.com` and `www.castilloquesada.com` DNS
+      record TTLs from 5 min back to 24h once the site is confirmed
+      stable — 5 min was set temporarily during launch weekend for
+      fast troubleshooting feedback.
+
 ## GitHub
+
 - [ ] Profile README (`CatinhoCR/CatinhoCR` special repo) — positioning
       line + links.
 - [ ] Bulk-privatize old/junk repos via `gh` CLI loop (private beats
@@ -41,6 +51,7 @@ is live and the Monday post is out.
       presentable repos.
 
 ## Possible longer-horizon
+
 - [ ] Three.js product configurator — identified as the strongest
       differentiator project; not started.
 - [ ] Koyu Studio site — deferred until after this portfolio ships;
