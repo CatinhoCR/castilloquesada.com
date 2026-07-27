@@ -1,4 +1,5 @@
 import SectionHeading from "@/components/ui/SectionHeading";
+import { Button } from "@/components/ui/Button";
 
 const links = [
   // TODO: confirm the public-facing email you want on the site
@@ -24,14 +25,14 @@ export default function Contact() {
       <ul className="mt-12 flex flex-wrap gap-x-10 gap-y-4">
         {links.map(({ label, href }) => (
           <li key={label}>
-            <a
+            <Button
               href={href}
+              variant="link"
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="border-b border-[var(--color-text)] pb-1 text-[length:var(--text-body)] transition-opacity hover:opacity-60"
             >
               {label}
-            </a>
+            </Button>
           </li>
         ))}
       </ul>

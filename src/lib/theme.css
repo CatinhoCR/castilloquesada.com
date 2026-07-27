@@ -12,7 +12,8 @@
   --color-surface-2: #1B1B1F;       /* hover states, nested surfaces */
 
   --color-primary: #ECECEE;         /* headings, body */
-  --color-secondary: #8B8B93;       /* supporting text */
+  --color-secondary: #A6A6AE;     /* supporting text */
+  /* #8B8B93;       supporting text */
   --color-muted: #56565E;           /* captions, meta, dim text */
 
   /* Accent: Electric Lime (design default).
@@ -92,9 +93,17 @@
     color: var(--color-primary);
   }
 
+  a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    transition: color var(--duration-fast) var(--ease-out-expo);
+  }
+
   ::selection {
     background-color: var(--color-accent);
     color: var(--color-accent-ink);
+    /* background: var(--color-text); */
+    /* color: var(--color-bg); */
   }
 
   @media (prefers-reduced-motion: reduce) {

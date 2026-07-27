@@ -14,6 +14,26 @@ is live and the Monday post is out.
       performance over time. Low effort, worth turning on once the site
       has real traffic post-launch (no signal before then).
 
+## This launch (not deferred — noted for the Contact block)
+
+- [ ] Resume download: static PDF in `public/`, link with `download`
+      attribute. No API needed. (Optional later: `/api/resume` route
+      that logs a download count before redirecting to the file.)
+- [ ] Contact form: serverless via a Next.js route handler + SendGrid API
+      — deliberate choice over a separate backend, both to keep launch
+      scope small and as practice with the SendGrid integration pattern
+      (validate input server-side, send via API key stored in env vars,
+      never expose the key client-side).
+
+## Separate project — not part of this site's launch scope
+
+- [ ] Full-stack NestJS (or Express) API + database build. Purpose still
+      open — leading candidates: admin dashboard (view contact
+      submissions, resume download counts), blog/CMS layer, or simply
+      portfolio/practice value of a full-stack NestJS build on its own.
+      Revisit once the portfolio's live and there's room to scope it as
+      its own mini-project rather than a website "phase."
+
 ## Content / structure
 
 - [ ] Case study **detail pages** — v1 ships all three narratives inline
@@ -36,6 +56,7 @@ is live and the Monday post is out.
 - [ ] Verify: outcome-stat mobile font size (also a guess, same reason).
 
 ## DNS
+
 - [ ] Revert `castilloquesada.com` and `www.castilloquesada.com` DNS
       record TTLs from 5 min back to 24h once the site is confirmed
       stable — 5 min was set temporarily during launch weekend for

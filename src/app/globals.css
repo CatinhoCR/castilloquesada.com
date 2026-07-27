@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "../lib/theme.css";
+@import "../styles/utilities.css";
 
 /* Legacy aliases: components still reference these names; theme.css
    tokens (--color-base, --color-primary, etc.) are the source of truth. */
@@ -25,9 +26,4 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-::selection {
-  background: var(--color-text);
-  color: var(--color-bg);
 }

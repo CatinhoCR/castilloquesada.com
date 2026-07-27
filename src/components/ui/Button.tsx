@@ -7,12 +7,16 @@ import { useLenis } from "@/components/providers/SmoothScroll";
 import { dur, ease } from "@/lib/motion";
 
 const base =
-  "inline-flex items-center justify-center font-mono text-[length:var(--text-small)] uppercase tracking-[0.12em] transition-colors duration-[var(--duration-fast)] px-6 py-3 rounded-[var(--radius-pill)]";
+  "inline-flex items-center justify-center font-mono text-[length:var(--text-small)] uppercase tracking-[0.12em] transition-colors duration-[var(--duration-fast)]";
+
+const pill = "px-6 py-3 rounded-[var(--radius-pill)]";
 
 const variants = {
-  main: "bg-[var(--color-accent)] text-[var(--color-accent-ink)] hover:bg-[var(--color-accent-hover)]",
-  secondary:
-    "border border-[var(--color-line-strong)] text-[var(--color-primary)] hover:border-[var(--color-accent)]",
+  main: `${pill} bg-[var(--color-accent)] text-[var(--color-accent-ink)] hover:bg-[var(--color-accent-hover)]`,
+  secondary: `${pill} border border-[var(--color-line-strong)] text-[var(--color-primary)] hover:border-[var(--color-accent)]`,
+  // Plain text link, no pill chrome — pairs with the hover-underline
+  // utilities (styles/utilities.css) for anchor-style CTAs.
+  link: "hover-underline hover-underline-right text-[var(--color-primary)]",
 };
 
 type Variant = keyof typeof variants;
