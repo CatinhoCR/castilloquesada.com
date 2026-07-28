@@ -124,7 +124,7 @@ export default function Hero() {
           ref={headline}
           className="mt-6 text-display font-display font-medium text-primary"
         >
-          <span className="block">{headlineLine1}</span>
+          <span className="block">{headlineLine1}</span>{" "}
           <span className="block text-accent">{headlineLine2}</span>
         </h1>
 
