@@ -6,17 +6,33 @@ import gsap from "gsap";
 import { useLenis } from "@/components/providers/SmoothScroll";
 import { dur, ease } from "@/lib/motion";
 
+// Layout + reset only. Typography lives on each variant, because the
+// chrome'd buttons and the text-link variants want different families
+// and casing — a shared type declaration up here would force one of
+// them to undo it.
+//
+// `no-underline` is load-bearing: theme.css sets a global
+// `@layer base { a { text-decoration: underline } }`, and every href'd
+// Button renders an <a>.
 const base =
-  "inline-flex items-center justify-center font-mono text-[length:var(--text-small)] uppercase tracking-[0.12em] transition-colors duration-[var(--duration-fast)]";
+  "inline-flex items-center justify-center no-underline transition-colors duration-[var(--duration-fast)]";
 
-const pill = "px-6 py-3 rounded-[var(--radius-pill)]";
+// Rounded-rect, not pill — shared by the three chrome'd variants.
+const shape = "rounded-card px-6 py-3 font-sans text-small";
 
 const variants = {
-  main: `${pill} bg-[var(--color-accent)] text-[var(--color-accent-ink)] hover:bg-[var(--color-accent-hover)]`,
-  secondary: `${pill} border border-[var(--color-line-strong)] text-[var(--color-primary)] hover:border-[var(--color-accent)]`,
-  // Plain text link, no pill chrome — pairs with the hover-underline
+  // Solid accent fill.
+  main: `${shape} bg-accent text-accent-ink hover:bg-accent-hover`,
+  // Accent outline on transparent — the design's primary CTA treatment.
+  outline: `${shape} border border-accent text-accent hover:bg-accent-subtle`,
+  // Neutral outline on transparent.
+  secondary: `${shape} border border-line-strong text-primary hover:border-accent hover:text-accent`,
+  // Plain text link, no button chrome — pairs with the hover-underline
   // utilities (styles/utilities.css) for anchor-style CTAs.
-  link: "hover-underline hover-underline-right text-[var(--color-primary)]",
+  link: "font-mono text-small uppercase tracking-[0.12em] text-primary hover-underline hover-underline-right",
+  // Nav chrome. Routed through Button (rather than a bare next/link in
+  // Nav.tsx) purely to reuse the Lenis hash-scroll handling below.
+  nav: "font-mono text-label text-secondary hover:text-primary",
 };
 
 type Variant = keyof typeof variants;

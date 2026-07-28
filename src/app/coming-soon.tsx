@@ -1,8 +1,13 @@
 /**
- * app/page.tsx — coming-soon page for the `main` branch.
+ * app/coming-soon.tsx — reference copy of the coming-soon page that
+ * shipped to `main`.
  *
- * Lives on production while the real site is built on `build/launch`.
- * Friday's launch replaces this via merge.
+ * NOT a route: App Router only serves `page.tsx`. Kept here so the
+ * launch copy and link set stay recoverable while the real site is
+ * built out. It is still type-checked, so it moves with InfoCard's API.
+ *
+ * The name / nickname / status row it used to pass now lives in
+ * components/layout/Nav.tsx, rendered site-wide from app/layout.tsx.
  */
 
 import { InfoCard } from "@/components/ui/InfoCard";
@@ -11,9 +16,6 @@ export default function ComingSoon() {
   return (
     <InfoCard
       variant="coming-soon"
-      name="Andrés Castillo"
-      nickname="Cato"
-      statusLabel="Available for work"
       eyebrow="New site — launching soon"
       headline={
         <>
