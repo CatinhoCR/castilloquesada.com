@@ -66,6 +66,20 @@
   --text-eyebrow--line-height: 1;
   --text-eyebrow--letter-spacing: 0.14em;
 
+  /* Fixed UI-chrome sizes — nav/footer, not fluid content */
+  --text-nav-name: 1.125rem;                                     /* 18 — nav wordmark */
+  --text-nav-name--letter-spacing: -0.01em;
+
+  --text-label: 0.8125rem;                                       /* 13 — mono footer link labels */
+  --text-label--letter-spacing: 0.02em;
+
+  --text-tag: 0.625rem;                                          /* 10 — numeral prefixes (01/02/03) */
+
+  /* Coming-soon H1 — doesn't match --text-display or --text-h1 */
+  --text-hero-alt: clamp(3rem, 1.98rem + 4.19vw, 5.75rem);       /* 48→92 */
+  --text-hero-alt--line-height: 0.98;
+  --text-hero-alt--letter-spacing: -0.035em;
+
   /* ---------- SPACING (4px base system) ---------- */
   --spacing-section: clamp(3rem, 1.51rem + 6.1vw, 7rem);         /* 48→112 */
   --spacing-section-sm: clamp(2.5rem, 1.5rem + 4vw, 5rem);
@@ -77,6 +91,10 @@
   /* ---------- SHAPE ---------- */
   --radius-card: 0.75rem;            /* VERIFY against HTML export in devtools */
   --radius-pill: 999px;
+
+  /* Small decorative sizes */
+  --size-dot-sm: 0.4375rem;          /* 7 — nav badge dot */
+  --size-dot-lg: 0.5rem;             /* 8 — eyebrow dot */
 
   /* ---------- MOTION (CSS side, mirrors lib/motion.ts) ---------- */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
