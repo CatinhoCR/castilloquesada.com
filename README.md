@@ -1,9 +1,24 @@
-# castilloquesada.com
+# castilloquesada.com — Personal Portfolio & Creative Lab
+
+> Production portfolio built with Next.js (App Router), GSAP, Lenis, and Tailwind CSS. Focused on 60fps performance, design systems, and responsive accessibility.
 
 Personal portfolio and case study site for **Andrés Castillo Quesada** —
 Senior Frontend Engineer & Architect / Creative Technologist.
 
 **[castilloquesada.com](https://castilloquesada.com)**
+
+## 🛠 Tech Stack & Architecture
+- **Framework:** [Next.js](https://nextjs.org) (App Router / React 19), TypeScript
+- **Styling:** Tailwind CSS v4 (`@theme` design tokens) + SCSS Modules (Design Tokens & Keyframe Isolation)
+- **Motion Engine:** [GSAP](https://gsap.com) (ScrollTrigger) + `@gsap/react`,
+  [Lenis](https://lenis.darkroom.engineering) for smooth scroll
+- **Typography:** Space Grotesk, Hanken Grotesk, Space Mono\
+- **Deployment** — [Vercel](https://vercel.com)
+
+## 📐 Key Technical Highlights
+- **Polymorphic Architecture:** Reusable `<InfoCard />` pattern for dual-use layout stages.
+- **GSAP/Lenis Sync:** Custom RAF ticker integration preventing frame drops on High-Refresh Rate displays.
+- **Zero-CLSS Strategy:** Strict SSR/CSR layout isolation for smooth font/asset hydration.
 
 ## About
 
@@ -11,15 +26,6 @@ Senior Frontend Engineer & Architect / Creative Technologist.
 engineering — 3D/WebGL, motion, design systems, and full-stack
 architecture. This site is both a portfolio and a working example of the
 stack it describes: hand-built, token-driven, animation-first.
-
-## Stack
-
-- **Framework** — [Next.js](https://nextjs.org) (App Router), TypeScript
-- **Styling** — Tailwind CSS v4 (`@theme` design tokens) + SCSS modules
-  for animation-specific styling
-- **Motion** — [GSAP](https://gsap.com) + `@gsap/react`,
-  [Lenis](https://lenis.darkroom.engineering) for smooth scroll
-- **Deployment** — [Vercel](https://vercel.com)
 
 ## Architecture notes
 

@@ -54,6 +54,10 @@ is live and the Monday post is out.
       list — currently a guess in `theme.css`, confirm against the HTML
       export's computed styles).
 - [ ] Verify: outcome-stat mobile font size (also a guess, same reason).
+- [ ] Verify: `--spacing-gutter` desktop value (88px) vs. the Coming Soon
+      Claude Design export's gutter (72px) — 16px drift, unclear which
+      export is authoritative site-wide. Left `--spacing-gutter` as-is
+      for the InfoCard build; confirm against final desktop comps.
 
 ## DNS
 
