@@ -14,6 +14,24 @@ is live and the Monday post is out.
       performance over time. Low effort, worth turning on once the site
       has real traffic post-launch (no signal before then).
 
+## Cut from v1 during the Tue/Wed hard-deadline sprint (Jul 28-29)
+
+Applications paused until launch per family advice on first-impression
+risk — this made "ship, not perfect" the explicit priority, so scope
+was cut hard rather than quality. These are the specific cuts:
+- [ ] **Contact form (serverless + SendGrid)** — v1 ships with the
+      InfoCard contact-block variant instead (mailto + LinkedIn +
+      GitHub links only, no actual form/backend). Real form + SendGrid
+      integration deferred — still valuable as a practice item, just
+      not blocking launch.
+- [ ] **Dedicated About section** — v1 folds a short bio paragraph into
+      the hero/contact area instead of a full standalone section with
+      its own layout and scroll choreography.
+- [ ] **Full ship-quality passes** — v1 ships with essentials only
+      (basic meta/OG tags, favicon, a quick Lighthouse sanity check).
+      Deferred: a real accessibility audit (WCAG-level pass, not just
+      basic contrast/alt text) and deeper performance tuning.
+
 ## This launch (not deferred — noted for the Contact block)
 
 - [ ] Resume download: static PDF in `public/`, link with `download`
@@ -54,10 +72,6 @@ is live and the Monday post is out.
       list — currently a guess in `theme.css`, confirm against the HTML
       export's computed styles).
 - [ ] Verify: outcome-stat mobile font size (also a guess, same reason).
-- [ ] Verify: `--spacing-gutter` desktop value (88px) vs. the Coming Soon
-      Claude Design export's gutter (72px) — 16px drift, unclear which
-      export is authoritative site-wide. Left `--spacing-gutter` as-is
-      for the InfoCard build; confirm against final desktop comps.
 
 ## DNS
 
