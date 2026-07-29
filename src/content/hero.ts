@@ -20,10 +20,10 @@ export interface HeroContent {
 
 export const heroContent: HeroContent = {
   eyebrow: "Senior frontend engineer & architect",
-  headlineLine1: "Senior frontend engineering with a",
-  headlineLine2: "designer's eye.",
+  headlineLine1: "building high-performance",
+  headlineLine2: "frontend architecture",
   subhead:
-    "13 years building interactive 3D, motion systems and design-system architecture for global brands — from real-time product configurators to platforms serving multiple teams.",
+    "13 years engineering scalable frontend architecture and real-time 3D for Walmart and Vans — plus Publicis Groupe's Next.js careers platform. TypeScript, React, Vue, Next.js, and automated Playwright regression testing.",
   ctaPrimary: { label: "View selected work →", href: "#work" },
   ctaSecondary: { label: "Get in touch", href: "#contact" },
 };
