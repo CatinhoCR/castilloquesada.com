@@ -99,6 +99,30 @@ Prefer this over a hand-rolled `.button--main` CSS class — it gets
 TypeScript checking on the variant name and stays wired to the token
 system automatically.
 
+## Content files
+
+All user-facing copy — nav labels, headings, body text, case study
+narratives, link labels, footer text — lives in `src/content/`, one typed
+file per page section, named to match its component
+(`Hero.tsx` → `content/hero.ts`, `About.tsx` → `content/about.ts`). Each
+file exports a typed const; colocate the interface in the same file rather
+than a separate `.types.ts` (matches how `Button.tsx` already colocates its
+own prop types).
+
+**Never hardcode a literal string of user-facing copy inside a component.**
+A component reads content from its matching file and renders it — it
+doesn't author it. This is what makes a copy edit (a headline tweak, an
+NDA-driven case study revision) a data change instead of a component
+change. This file structure replaced an earlier divergence where nav/hero
+copy lived in `config/siteContent.ts`, case studies in `lib/caseStudies.ts`,
+and About/Contact hardcoded their own copy inline with no data file at
+all — don't recreate that split.
+
+Exceptions: ARIA labels / `aria-label` strings, and structural glue text
+that isn't really "content" (e.g. `" · "` a separator, `"→"` an arrow
+glyph) can stay inline — they're markup decisions, not copy a non-engineer
+would ever want to edit.
+
 ## Branching & deploy
 
 - `main` — always what's live on castilloquesada.com. Never break it.

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { StatusDot } from "@/components/ui/StatusDot";
-import { navContent } from "@/config/siteContent";
+import { navContent } from "@/content/nav";
 
 /*
   Nav — top bar, rendered once from app/layout.tsx.

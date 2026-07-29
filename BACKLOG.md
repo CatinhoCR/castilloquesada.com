@@ -14,6 +14,20 @@ is live and the Monday post is out.
       performance over time. Low effort, worth turning on once the site
       has real traffic post-launch (no signal before then).
 
+## Deferred polish (post-v1)
+
+- [ ] **Hero reveal: replay on nav-click.** v1 ships with a simple
+      "fires once, ever" hero animation (ScrollTrigger + once: true —
+      first viewport entry, however it happens, triggers it; never
+      again after). Nice-to-have upgrade: clicking a nav item that
+      scrolls back to the hero (e.g. logo/"Home") replays the reveal
+      every time, while organic scroll-past still only plays it once.
+      Needs a ref-based flag (navTriggeredRef) set in the nav click
+      handler and checked/reset inside the ScrollTrigger's onEnter —
+      NOT useState, since nothing here should force a re-render.
+      Also remember: SplitText instance must be .revert()'d before
+      each re-split on replay, or stale wrapper spans accumulate.
+
 ## Cut from v1 during the Tue/Wed hard-deadline sprint (Jul 28-29)
 
 Applications paused until launch per family advice on first-impression

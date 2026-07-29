@@ -14,7 +14,7 @@ export function StatusDot({ size }: { size: "sm" | "lg" }) {
   return (
     <span
       aria-hidden="true"
-      className={`${styles.dot} rounded-full`}
+      className={`${styles.dot} rounded-full text-accent`}
       style={{ width: dimension, height: dimension }}
     />
   );

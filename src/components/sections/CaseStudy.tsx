@@ -4,7 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import type { CaseStudy as CaseStudyType } from "@/lib/caseStudies";
+import type { CaseStudy as CaseStudyType } from "@/content/work";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 

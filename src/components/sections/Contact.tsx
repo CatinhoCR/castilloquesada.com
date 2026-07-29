@@ -1,14 +1,10 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-
-const links = [
-  // TODO: confirm the public-facing email you want on the site
-  { label: "Email", href: "mailto:hello@castilloquesada.com" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/catinhocr" },
-  { label: "GitHub", href: "https://github.com/CatinhoCR" },
-];
+import { contactContent } from "@/content/contact";
 
 export default function Contact() {
+  const { intro, links, footer } = contactContent;
+
   return (
     <section
       id="contact"
@@ -18,8 +14,7 @@ export default function Contact() {
       <SectionHeading>Contact</SectionHeading>
 
       <p className="mt-8 max-w-xl text-[length:var(--text-h3)] leading-snug">
-        Open to senior frontend and creative engineering roles, and select
-        freelance engagements.
+        {intro}
       </p>
 
       <ul className="mt-12 flex flex-wrap gap-x-10 gap-y-4">
@@ -38,8 +33,7 @@ export default function Contact() {
       </ul>
 
       <p className="mt-[var(--space-section)] text-[length:var(--text-small)] text-[var(--color-text-muted)]">
-        © {new Date().getFullYear()} Andrés Castillo Quesada · San José,
-        Costa Rica
+        © {new Date().getFullYear()} {footer}
       </p>
     </section>
   );
