@@ -1,4 +1,3 @@
-import SectionHeading from "@/components/ui/SectionHeading";
 import CaseStudyRow from "@/components/ui/CaseStudyRow";
 import { VansMark } from "@/components/ui/marks/VansMark";
 import { WalmartMark } from "@/components/ui/marks/WalmartMark";
@@ -18,9 +17,11 @@ export default function CaseStudies() {
       className="px-gutter py-section"
       aria-label="Selected work"
     >
-      <SectionHeading>Selected work</SectionHeading>
+      <h2 className="text-h2 font-display font-medium tracking-[-0.02em] text-primary">
+        Selected work
+      </h2>
 
-      <div className="mt-4">
+      <div className="mt-8">
         {caseStudies.map((study, i) => (
           <CaseStudyRow
             key={study.id}

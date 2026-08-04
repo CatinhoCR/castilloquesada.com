@@ -67,7 +67,7 @@ export default function CaseStudyRow({
   return (
     <article
       ref={scope}
-      className={`grid grid-cols-1 items-center gap-3 py-9 md:grid-cols-[120px_1fr_300px] md:gap-10 md:py-15 ${
+      className={`grid grid-cols-1 items-center gap-3 py-9 lg:grid-cols-[120px_1fr_300px] lg:gap-10 lg:py-15 ${
         isFirst ? "" : "border-t border-line"
       } ${isLast ? "border-b" : ""}`}
       aria-label={study.title}
@@ -120,7 +120,9 @@ export default function CaseStudyRow({
         </div>
       </div>
 
-      <div className="hidden justify-self-end md:block">{mark}</div>
+      <div className="hidden aspect-square w-[clamp(160px,16.83vw-12px,230px)] justify-self-end lg:block">
+        {mark}
+      </div>
     </article>
   );
 }

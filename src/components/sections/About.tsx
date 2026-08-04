@@ -1,32 +1,46 @@
-import SectionHeading from "@/components/ui/SectionHeading";
 import { aboutContent } from "@/content/about";
 
 export default function About() {
-  const { intro, capabilities } = aboutContent;
+  const { eyebrow, headline, intro, frameworksLabel, frameworks, pairings } =
+    aboutContent;
 
   return (
     <section
       id="about"
-      className="px-[var(--space-gutter)] py-[var(--space-section)]"
+      className="px-gutter py-section"
       aria-label="About and capabilities"
     >
-      <SectionHeading>About</SectionHeading>
+      <p className="font-mono text-eyebrow uppercase text-secondary">{eyebrow}</p>
 
-      <p className="mt-8 max-w-2xl text-[length:var(--text-h3)] leading-snug">
-        {intro}
-      </p>
+      <h2 className="mt-6 max-w-[34ch] text-lead tracking-[-0.01em] text-primary">
+        {headline}
+      </h2>
 
-      <div className="mt-16 grid gap-12 sm:grid-cols-3">
-        {capabilities.map(({ area, skills }) => (
-          <div key={area}>
-            <h3 className="text-[length:var(--text-small)] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-              {area}
-            </h3>
-            <ul className="mt-4 space-y-2 text-[length:var(--text-body)]">
-              {skills.map((skill) => (
-                <li key={skill}>{skill}</li>
-              ))}
-            </ul>
+      <p className="mt-6 max-w-[56ch] text-body text-secondary">{intro}</p>
+
+      <div className="mt-12 border-t border-line pt-8">
+        <p className="font-mono text-eyebrow uppercase tracking-[0.16em] text-muted">
+          {frameworksLabel}
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {frameworks.map((framework) => (
+            <span
+              key={framework}
+              className="rounded-sm border border-line-strong px-2.5 py-1.25 font-mono text-label text-secondary"
+            >
+              {framework}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-3 border-t border-line pt-8 sm:grid-cols-2">
+        {pairings.map(({ concept, tool }) => (
+          <div key={concept} className="flex items-baseline justify-between gap-4 text-small">
+            <span className="text-primary">{concept}</span>
+            <span className="font-mono text-(length:--text-eyebrow) text-muted">
+              {tool}
+            </span>
           </div>
         ))}
       </div>

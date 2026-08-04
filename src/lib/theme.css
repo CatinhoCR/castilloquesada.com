@@ -12,9 +12,8 @@
   --color-surface-2: #1B1B1F;       /* hover states, nested surfaces */
 
   --color-primary: #ECECEE;         /* headings, body */
-  --color-secondary: #A6A6AE;     /* supporting text */
-  /* #8B8B93;       supporting text */
-  --color-muted: #56565E;           /* captions, meta, dim text */
+  --color-secondary: #B4B4BC;       /* supporting text — ~9.5:1 vs --color-base, clears AAA */
+  --color-muted: #6B6B74;           /* captions, meta, dim text — ~3.7:1 vs --color-base, clears the 3:1 large-text floor only. Not for normal body-sized text. */
 
   /* Accent: Electric Lime (design default).
      Alts — swap the two lines below to change site-wide:

@@ -1,4 +1,4 @@
-export function WalmartMark({ size = 230 }: { size?: number }) {
+export function WalmartMark() {
   const cell = 66.67;
   const gap = 15;
   const step = cell + gap;
@@ -14,7 +14,7 @@ export function WalmartMark({ size = 230 }: { size?: number }) {
     { r: 2, c: 2, fill: null },
   ];
   return (
-    <svg width={size} height={size} viewBox="0 0 230 230" fill="none">
+    <svg viewBox="0 0 230 230" fill="none" aria-hidden="true" className="h-full w-full">
       {cells.map((cell_, i) => (
         <rect
           key={i}

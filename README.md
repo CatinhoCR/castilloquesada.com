@@ -1,5 +1,7 @@
 # castilloquesada.com — Personal Portfolio & Creative Lab
 
+![Tests](https://github.com/CatinhoCR/castilloquesada.com/actions/workflows/tests.yml/badge.svg)
+
 > Production portfolio built with Next.js (App Router), GSAP, Lenis, and Tailwind CSS. Focused on 60fps performance, design systems, and responsive accessibility.
 
 Personal portfolio and case study site for **Andrés Castillo Quesada** —
