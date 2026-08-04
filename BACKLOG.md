@@ -62,8 +62,17 @@ is live and the Monday post is out.
       PostgreSQL). Not client IP — it's original system design. Also
       directly answers the "lacks complex architecture demonstration"
       gap from the Gemini research review.
-- [ ] Possible 4th case study: Wegmans React Native mobile app —
-      parked for later evaluation, not part of the current three.
+- [ ] **Publicis Groupe Careers as case study #4 — fast follow, do
+      Tuesday/Wednesday right after launch, not before.** Now cheap:
+      the section/row/mark component pattern already exists, this is
+      just a new CaseStudy object + one new mark component, not a
+      rebuild. Don't let this delay the initial launch — it's a
+      strong, quick addition once live, not a reason to hold.
+- [ ] **Wegmans React Native — needs fact-finding first, hold
+      separately from Publicis.** Resume's actual wording doesn't
+      specifically call out React Native for Wegmans — verify exactly
+      what was built and what's defensible before drafting a case
+      study, same accuracy pass Uniwatch/Vans already went through.
 
 ## From external research review (Gemini deep research, Jul 28) — validated, not new scope
 
@@ -104,6 +113,30 @@ is live and the Monday post is out.
       with Wegmans — quick, do this soon; (2) consider as a 4th
       portfolio case study in cycle 2 — it's arguably the single most
       directly relevant proof point for the roles being targeted.
+
+- [ ] Bump GitHub Actions versions in tests.yml (checkout, setup-node,
+      upload-artifact) — currently showing a "Node.js 20 deprecated,
+      forced to run on Node 24" warning. Not an error, tests still
+      pass, but worth a quick version bump to the latest majors when
+      there's time. Unrelated to the app's own Node 20 target.
+
+- [ ] **About section: add portrait photo.** v1 ships without one (no
+      good photo on a dark background available yet). When ready:
+      circle back to Claude Design to reintroduce the image slot
+      alongside the framework badges + concept grid, without
+      disrupting that layout.
+
+- [ ] **Move to andres.castilloquesada.com as primary, apex redirects
+      to it.** Decided post-launch, not urgent — zero SEO cost since
+      the site has no indexing history yet. Three pieces: (1) DNS —
+      new CNAME for `andres` pointing at Vercel, same pattern as the
+      existing `www` record; (2) Vercel — add the subdomain, set it as
+      primary/production, repoint the apex redirect (currently →
+      www) to go to the subdomain instead; (3) CODE — update
+      metadataBase in layout.tsx from castilloquesada.com to the
+      subdomain (drives OG tags + canonical URLs, easy to miss since
+      it's not DNS-visible). Verify propagation + the full redirect
+      chain (apex → subdomain, no loop) before considering it done.
 
 ## Deferred polish (post-v1)
 

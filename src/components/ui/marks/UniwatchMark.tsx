@@ -1,6 +1,6 @@
-export function UniwatchMark({ size = 230 }: { size?: number }) {
+export function UniwatchMark() {
   return (
-    <svg width={size} height={size} viewBox="0 0 230 230" fill="none">
+    <svg viewBox="0 0 230 230" fill="none" aria-hidden="true" className="h-full w-full">
       <rect x="0" y="30" width="168" height="168" stroke="var(--color-line-strong)" strokeWidth="1" />
       <rect x="37" y="0" width="168" height="168" stroke="var(--color-line-strong)" strokeWidth="1" />
       <rect x="67" y="67" width="100" height="2" fill="var(--color-accent)" />
