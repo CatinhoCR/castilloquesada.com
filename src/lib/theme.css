@@ -50,7 +50,7 @@
   --text-h3: clamp(1.5rem, 1.27rem + 0.95vw, 2.125rem);         /* card titles: 24→34 */
   --text-h3--line-height: 1.15;
 
-  --text-stat: clamp(2.25rem, 1.88rem + 1.52vw, 3.25rem);       /* outcome stats: ~36→52 */
+  --text-stat: clamp(2.25rem, 1.88rem + 1.52vw, 3.25rem);       /* large standalone stat callouts: ~36→52 (not case study outcomes — those use --text-lead, see caseStudies.ts) */
   --text-stat--line-height: 1.05;
 
   --text-lead: clamp(1.1875rem, 1.03rem + 0.67vw, 1.625rem);    /* leads: 19→26 */
@@ -77,6 +77,9 @@
   --text-label--letter-spacing: 0.02em;
 
   --text-tag: 0.625rem;                                          /* 10 — numeral prefixes (01/02/03) */
+
+  --text-index-numeral: clamp(2.75rem, 1.91rem + 3.43vw, 5rem); /* case study row numeral: 44→80 */
+  --text-index-numeral--line-height: 1;
 
   /* Coming-soon H1 — doesn't match --text-display or --text-h1 */
   --text-hero-alt: clamp(3rem, 1.98rem + 4.19vw, 5.75rem);       /* 48→92 */

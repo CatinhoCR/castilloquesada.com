@@ -14,6 +14,97 @@ is live and the Monday post is out.
       performance over time. Low effort, worth turning on once the site
       has real traffic post-launch (no signal before then).
 
+## Dynamic accent color switcher (post-v1, showcase feature)
+
+- [ ] Let visitors pick a different accent color live on the site —
+      swaps --color-accent (and dependent tokens: --color-accent-hover,
+      --color-accent-subtle) across the whole page in real time.
+      Doubles as a design-system proof point (echoes the "design token
+      playground" idea from the research review) and a nice interactive
+      touch for a Creative Technologist portfolio.
+- [ ] Scope as a curated swatch picker, not a full color wheel — reuse
+      the three accent options already defined from the original
+      Claude Design pass (Electric Lime, Signal Coral, Ice Blue) so
+      every option is pre-verified for contrast against the dark
+      background. A free-form picker risks landing on an
+      inaccessible/ugly combo.
+- [ ] Technical approach: since colors are already CSS custom
+      properties in theme.css, swap via
+      document.documentElement.style.setProperty('--color-accent', ...)
+      at runtime — no rebuild needed, just a small client component +
+      a bit of state. Persist the choice for the session (real
+      localStorage is fine here — this is the live site, not a Claude
+      artifact/widget, so the artifact-only localStorage restriction
+      doesn't apply).
+- [ ] Keep it visually minimal — a small swatch row somewhere
+      unobtrusive (e.g. near the footer/contact area), not a prominent
+      UI element competing with the actual content.
+
+- [ ] A full case study detail page template already exists in the
+      Claude Design HTML export (design-reference/ folder) — role/
+      tenure/client/stack meta row, full-bleed abstract band, overview/
+      challenge/approach sections, animated outcome stats. When detail
+      pages get built, start from that template rather than designing
+      from scratch.
+
+## Case study visuals (post-v1)
+
+- [ ] v1 ships with pure typography + stat + stack-tag treatment, no
+      imagery — consistent with the original NDA constraint (no
+      client screenshots/logos), not a fallback.
+- [ ] Cycle 2 option: original abstract visuals per case study,
+      generated in code (SVG/canvas), representing the technical
+      concept not the product — e.g. a warped-grid motif for Vans'
+      UV-mapping, a token/swatch grid for Walmart Connect, a
+      node-graph pattern for Uniwatch's similarity matching.
+- [ ] Cycle 2 option, especially strong for Uniwatch: a real
+      architecture diagram (Express BFF → NestJS API → TensorFlow →
+      PostgreSQL). Not client IP — it's original system design. Also
+      directly answers the "lacks complex architecture demonstration"
+      gap from the Gemini research review.
+- [ ] Possible 4th case study: Wegmans React Native mobile app —
+      parked for later evaluation, not part of the current three.
+
+## From external research review (Gemini deep research, Jul 28) — validated, not new scope
+
+- [ ] **Positioning: lead with "Senior Frontend Engineer," keep "Creative
+      Technologist" as the supporting line** — reorders hero copy for
+      ATS/recruiter keyword scanning without abandoning the
+      differentiator. Low-effort, worth doing before launch.
+- [ ] **Document the Tailwind/SCSS boundary explicitly** — one line in
+      the README explaining SCSS is reserved for continuous keyframe
+      animation, Tailwind tokens for everything else, so a reviewer
+      sees the deliberate boundary rather than assuming inconsistency.
+- [ ] **Core Web Vitals / performance HUD** — surface live CLS/INP/LCP
+      via the web-vitals library, paired with a visible passing-tests
+      badge. Cheap, high-signal addition — good candidate for a
+      focused cycle-2 session.
+- [ ] **Interactive WebGL showcase** — validates and merges with the
+      already-planned Three.js configurator differentiator; could
+      specifically echo the Vans UV-mapping/warping logic as the demo.
+- [ ] **Resume ATS pass** — verify plain-text contact info is not
+      trapped in a header/footer, links are visible plain text (not
+      hyperlinked anchor text) if the ATS in question strips those,
+      dates are consistent format, skills are plain comma-separated
+      lists not visual meters. Separate task from the site, low effort,
+      can happen anytime.
+- [ ] **Correction (Jul 28):** USAA and the "3 years on Vans" claim were
+      NOT fabricated — confirmed real against the actual resume. My
+      earlier flag on these two was wrong (made without having the
+      resume in context). The stats table and LatAm compensation
+      formula from that research are still unverified/likely
+      fabricated and should not be used or repeated.
+- [ ] **New from resume review (Jul 28): elevate Publicis Groupe Careers
+      site.** Currently buried in a one-line "Additional Engagements"
+      bullet, but it's built in Next.js/React — the exact stack being
+      targeted, and notably the only piece of real work in Next.js/React
+      specifically (Vans is Vue, Walmart Connect is SCSS/AEM, Uniwatch
+      is backend-heavy). Two actions: (1) pull it into its own
+      standalone resume bullet with real detail/impact, not grouped
+      with Wegmans — quick, do this soon; (2) consider as a 4th
+      portfolio case study in cycle 2 — it's arguably the single most
+      directly relevant proof point for the roles being targeted.
+
 ## Deferred polish (post-v1)
 
 - [ ] **Hero reveal: replay on nav-click.** v1 ships with a simple
@@ -29,10 +120,10 @@ is live and the Monday post is out.
       each re-split on replay, or stale wrapper spans accumulate.
 
 ## Cut from v1 during the Tue/Wed hard-deadline sprint (Jul 28-29)
-
 Applications paused until launch per family advice on first-impression
 risk — this made "ship, not perfect" the explicit priority, so scope
 was cut hard rather than quality. These are the specific cuts:
+
 - [ ] **Contact form (serverless + SendGrid)** — v1 ships with the
       InfoCard contact-block variant instead (mailto + LinkedIn +
       GitHub links only, no actual form/backend). Real form + SendGrid
