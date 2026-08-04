@@ -1,4 +1,4 @@
-import { caseStudies } from "@/lib/caseStudies";
+import { caseStudies } from "@/content/work";
 import CaseStudy from "@/components/sections/CaseStudy";
 import SectionHeading from "@/components/ui/SectionHeading";
 

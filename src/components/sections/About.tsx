@@ -1,27 +1,9 @@
 import SectionHeading from "@/components/ui/SectionHeading";
-
-const capabilities = [
-  {
-    area: "Creative",
-    skills: ["Three.js / WebGL", "GSAP / ScrollTrigger", "Interactive 3D"],
-  },
-  {
-    area: "Architecture",
-    skills: [
-      "Design systems",
-      "React / Next.js",
-      "Vue / Nuxt",
-      "TypeScript",
-      "SCSS / Tailwind",
-    ],
-  },
-  {
-    area: "Full-stack",
-    skills: ["NestJS / Node.js", "PostgreSQL", "REST / GraphQL", "AWS / Docker"],
-  },
-];
+import { aboutContent } from "@/content/about";
 
 export default function About() {
+  const { intro, capabilities } = aboutContent;
+
   return (
     <section
       id="about"
@@ -31,8 +13,7 @@ export default function About() {
       <SectionHeading>About</SectionHeading>
 
       <p className="mt-8 max-w-2xl text-[length:var(--text-h3)] leading-snug">
-        I build the layer where design meets engineering — product
-        experiences with motion and depth, on architecture that scales.
+        {intro}
       </p>
 
       <div className="mt-16 grid gap-12 sm:grid-cols-3">

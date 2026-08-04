@@ -30,7 +30,7 @@ export const ease = {
 } as const;
 
 export const stagger = {
-  lines: 0.08,   // hero headline line-by-line reveal
+  lines: 0.09,   // hero headline line-by-line reveal
   chars: 0.02,   // only if the design calls for char-level splits
   cards: 0.12,   // case study card cascade on scroll
 } as const;

@@ -1,0 +1,29 @@
+/*
+  StatusDot.module.scss
+  Tailwind handles layout/spacing/responsive; SCSS modules own anything
+  animated or structurally complex (clip-paths, pseudo-element machinery,
+  keyframe choreography, masked reveals).
+
+  A keyframe loop is exactly that case — there's no Tailwind utility for it.
+  Color and border-radius deliberately stay out of here: the dot inherits
+  currentColor from whatever wraps it, and rounding is `rounded-full` in JSX.
+
+  prefers-reduced-motion is handled globally in theme.css / globals.css
+  (animation-duration is zeroed there), so this needs no media query.
+*/
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.dot {
+  display: inline-block;
+  background-color: currentColor;
+  animation: pulse 2.4s ease-in-out infinite;
+}

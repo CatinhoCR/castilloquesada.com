@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { displayFont, bodyFont, monoFont } from "@/lib/fonts";
 import SmoothScroll from "@/components/providers/SmoothScroll";
+import Nav from "@/components/layout/Nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,8 +32,12 @@ export default function RootLayout({
       lang="en"
       className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
     >
-      <body className="bg-[var(--color-base)] text-[var(--color-primary)] antialiased">
-        <SmoothScroll>{children}</SmoothScroll>
+      <body className="bg-base text-primary antialiased">
+        {/* Nav is site-wide chrome; the page owns its own <main>. */}
+        <SmoothScroll>
+          <Nav />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

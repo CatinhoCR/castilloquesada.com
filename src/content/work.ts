@@ -1,5 +1,6 @@
 /*
-  Content as data. Narrative wording lives here so NDA-driven revisions
+  content/work.ts — copy for components/sections/CaseStudies.tsx and
+  CaseStudy.tsx. Narrative wording lives here so NDA-driven revisions
   (post ex-colleague feedback) are a data edit, not a component edit.
 
   Rules for this file (agency/NDA constraints):

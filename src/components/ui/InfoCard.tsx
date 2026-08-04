@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "@/styles/InfoCard.module.scss";
+import { StatusDot } from "@/components/ui/StatusDot";
 
 export interface InfoCardLink {
   label: string;
@@ -12,9 +12,6 @@ type Variant = "coming-soon";
 
 export interface InfoCardProps {
   variant: Variant;
-  name: string;
-  nickname?: string;
-  statusLabel: string;
   eyebrow: string;
   headline: ReactNode;
   body: string;
@@ -22,21 +19,7 @@ export interface InfoCardProps {
   className?: string;
 }
 
-function StatusDot({ size }: { size: "sm" | "lg" }) {
-  const dimension =
-    size === "sm" ? "var(--size-dot-sm)" : "var(--size-dot-lg)";
-  return (
-    <span
-      className={`${styles.dot} rounded-full`}
-      style={{ width: dimension, height: dimension }}
-    />
-  );
-}
-
 export function InfoCard({
-  name,
-  nickname,
-  statusLabel,
   eyebrow,
   headline,
   body,
@@ -50,26 +33,10 @@ export function InfoCard({
     <div
       className={`flex min-h-svh flex-col bg-base text-primary ${className}`}
     >
-      <nav className="flex items-center justify-between px-[var(--spacing-gutter)] py-[clamp(1.375rem,4vw,1.875rem)]">
-        <div className="flex items-baseline gap-3">
-          <span className="font-display text-nav-name font-semibold text-primary">
-            {name}
-          </span>
-          {nickname && (
-            // bracket form: --text-eyebrow carries a paired 0.14em tracking
-            // this nav string doesn't want — font-size only, deliberately.
-            <span className="font-mono text-[length:var(--text-eyebrow)] text-muted">
-              &ldquo;{nickname}&rdquo;
-            </span>
-          )}
-        </div>
-        <span className="inline-flex items-center gap-2 font-mono text-[length:var(--text-eyebrow)] text-primary">
-          <StatusDot size="sm" />
-          {statusLabel}
-        </span>
-      </nav>
-
-      <main className="mx-auto flex w-full max-w-[var(--container-content)] flex-1 flex-col justify-center px-[var(--spacing-gutter)] py-[clamp(1.5rem,5vw,2.5rem)]">
+      {/* No nav bar here — the site-wide one is rendered by app/layout.tsx.
+          A <div> rather than <main> for the same reason: layout.tsx owns
+          the page's single <main> landmark. */}
+      <div className="mx-auto flex w-full max-w-content flex-1 flex-col justify-center px-gutter py-[clamp(1.5rem,5vw,2.5rem)]">
         {/* bracket form: reuses --text-label's size but needs 0.18em
             tracking here, not the token's own paired 0.02em. */}
         <p className="mb-[clamp(1.75rem,4vw,2.25rem)] inline-flex items-center gap-[11px] font-mono text-[length:var(--text-label)] uppercase tracking-[0.18em] text-accent">
@@ -82,9 +49,9 @@ export function InfoCard({
         <p className="mt-[clamp(1.75rem,4vw,2.25rem)] max-w-[48ch] text-[length:var(--text-body)] text-secondary">
           {body}
         </p>
-      </main>
+      </div>
 
-      <footer className="mx-auto flex w-full max-w-[var(--container-content)] flex-wrap gap-[clamp(1.25rem,4vw,2.25rem)] border-t border-line px-[var(--spacing-gutter)] py-[clamp(1.375rem,4vw,1.625rem)]">
+      <footer className="mx-auto flex w-full max-w-content flex-wrap gap-[clamp(1.25rem,4vw,2.25rem)] border-t border-line px-gutter py-[clamp(1.375rem,4vw,1.625rem)]">
         {links.map((link, index) => {
           const isDownload = Boolean(link.download);
           const showArrow = link.external || isDownload;
