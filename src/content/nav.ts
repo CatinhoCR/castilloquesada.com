@@ -17,7 +17,7 @@ export interface NavContent {
 }
 
 export const navContent: NavContent = {
-  name: "Andrés Castillo",
+  name: "Andrés Castillo Quesada",
   nickname: "Cato",
   statusText: "Available",
   navLinks: [

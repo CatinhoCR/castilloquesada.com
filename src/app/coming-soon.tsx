@@ -28,7 +28,7 @@ export default function ComingSoon() {
       links={[
         {
           label: "Download Resume",
-          href: "/andres_castillo_resume_2026.pdf",
+          href: "/andres_castillo_resume.pdf",
           download: true,
         },
         {
