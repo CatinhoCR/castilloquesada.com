@@ -82,7 +82,7 @@ export default function CaseStudyRow({
       <div>
         <p
           data-row-fade
-          className="font-mono text-eyebrow uppercase tracking-[0.16em] text-muted"
+          className="font-mono text-eyebrow uppercase tracking-[0.16em] text-secondary"
         >
           {study.client} · {study.role}
         </p>
@@ -112,7 +112,7 @@ export default function CaseStudyRow({
           {study.stack.map((tech) => (
             <span
               key={tech}
-              className="rounded-sm border border-line-strong px-2.5 py-1.25 font-mono text-label text-muted"
+              className="rounded-sm border border-line-strong px-2.5 py-1.25 font-mono text-label text-secondary"
             >
               {tech}
             </span>

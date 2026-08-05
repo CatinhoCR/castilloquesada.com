@@ -138,6 +138,13 @@ is live and the Monday post is out.
       it's not DNS-visible). Verify propagation + the full redirect
       chain (apex → subdomain, no loop) before considering it done.
 
+- [ ] **Mobile navigation menu.** v1 ships with nav items simplified/
+      hidden on mobile (name + status only, per the original Nav
+      build). A real mobile nav (hamburger/drawer or similar,
+      including the GitHub icon and any future links) is phase-2 work
+      — not needed for launch since the mobile hero/CTAs already
+      provide the key actions.
+
 ## Deferred polish (post-v1)
 
 - [ ] **Hero reveal: replay on nav-click.** v1 ships with a simple
@@ -153,10 +160,10 @@ is live and the Monday post is out.
       each re-split on replay, or stale wrapper spans accumulate.
 
 ## Cut from v1 during the Tue/Wed hard-deadline sprint (Jul 28-29)
+
 Applications paused until launch per family advice on first-impression
 risk — this made "ship, not perfect" the explicit priority, so scope
 was cut hard rather than quality. These are the specific cuts:
-
 - [ ] **Contact form (serverless + SendGrid)** — v1 ships with the
       InfoCard contact-block variant instead (mailto + LinkedIn +
       GitHub links only, no actual form/backend). Real form + SendGrid

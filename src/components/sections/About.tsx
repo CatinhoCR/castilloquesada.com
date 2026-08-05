@@ -19,7 +19,7 @@ export default function About() {
       <p className="mt-6 max-w-[56ch] text-body text-secondary">{intro}</p>
 
       <div className="mt-12 border-t border-line pt-8">
-        <p className="font-mono text-eyebrow uppercase tracking-[0.16em] text-muted">
+        <p className="font-mono text-eyebrow uppercase tracking-[0.16em] text-secondary">
           {frameworksLabel}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
@@ -38,7 +38,7 @@ export default function About() {
         {pairings.map(({ concept, tool }) => (
           <div key={concept} className="flex items-baseline justify-between gap-4 text-small">
             <span className="text-primary">{concept}</span>
-            <span className="font-mono text-(length:--text-eyebrow) text-muted">
+            <span className="font-mono text-(length:--text-eyebrow) text-secondary">
               {tool}
             </span>
           </div>

@@ -23,7 +23,7 @@ export const heroContent: HeroContent = {
   headlineLine1: "building high-performance",
   headlineLine2: "frontend architecture",
   subhead:
-    "13 years engineering scalable frontend architecture and real-time 3D for Walmart and Vans — plus Publicis Groupe's Next.js careers platform. TypeScript, React, Vue, Next.js, and automated Playwright regression testing.",
+    "13 years engineering scalable frontend architecture and real-time 3D for major global retail and footwear brands — plus Publicis Groupe's Next.js careers platform. TypeScript, React, Vue, Next.js, and automated Playwright regression testing.",
   ctaPrimary: { label: "View selected work →", href: "#work" },
   ctaSecondary: { label: "Get in touch", href: "#contact" },
 };

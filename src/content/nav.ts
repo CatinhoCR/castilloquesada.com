@@ -14,6 +14,8 @@ export interface NavContent {
   /** Sits next to the pulsing availability dot. */
   statusText: string;
   navLinks: NavLink[];
+  /** Icon-only link near the status badge; desktop nav only. */
+  githubUrl: string;
 }
 
 export const navContent: NavContent = {
@@ -25,4 +27,5 @@ export const navContent: NavContent = {
     { label: "About", href: "#about" },
     { label: "Contact", href: "#contact" },
   ],
+  githubUrl: "https://github.com/CatinhoCR/castilloquesada.com",
 };

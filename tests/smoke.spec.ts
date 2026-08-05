@@ -42,7 +42,7 @@ test("contact links have correct hrefs and are not broken", async ({
   const contactSection = page.locator("#contact");
   await contactSection.scrollIntoViewIfNeeded();
 
-  for (const { label, href } of contactContent.links) {
+  for (const { label, href } of contactContent.rows) {
     const link = contactSection.getByRole("link", { name: label });
     await expect(link).toHaveAttribute("href", href);
 
