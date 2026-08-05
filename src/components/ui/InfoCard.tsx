@@ -15,7 +15,8 @@ export interface InfoCardProps {
   eyebrow: string;
   headline: ReactNode;
   body: string;
-  links: InfoCardLink[];
+  /** Only rendered by the coming-soon variant — contact-block builds its own link rows. */
+  links?: InfoCardLink[];
   className?: string;
 }
 
@@ -66,21 +67,17 @@ export function InfoCard({
   eyebrow,
   headline,
   body,
-  links,
+  links = [],
   className = "",
 }: InfoCardProps) {
   if (variant === "contact-block") {
     return (
-      <div className={`mx-auto w-full max-w-content px-gutter py-section ${className}`}>
+      <div className={`mx-auto w-full max-w-content px-gutter pt-section ${className}`}>
         <p className="font-mono text-(length:--text-label) uppercase tracking-[0.18em] text-accent">
           {eyebrow}
         </p>
         <h2 className="mt-8 text-h1 font-display font-medium">{headline}</h2>
         <p className="mt-6 max-w-[52ch] text-body text-secondary">{body}</p>
-
-        <div className="mt-16 flex flex-wrap gap-x-10 gap-y-4 border-t border-line pt-8">
-          <LinkRow links={links} />
-        </div>
       </div>
     );
   }

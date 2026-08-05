@@ -2,7 +2,7 @@
  * content/contact.ts — copy for components/sections/Contact.tsx.
  */
 
-export interface ContactLink {
+export interface ContactRow {
   label: string;
   href: string;
   external?: boolean;
@@ -15,7 +15,9 @@ export interface ContactContent {
   headlineLine1: string;
   headlineLine2: string;
   description: string;
-  links: ContactLink[];
+  /** Small mono label above the numbered row list, e.g. "Where to find me". */
+  rowsEyebrow: string;
+  rows: ContactRow[];
   /** Composed at render as `© ${year} ${footer}` — the year is a render-time value, not content. */
   footer: string;
 }
@@ -26,7 +28,8 @@ export const contactContent: ContactContent = {
   headlineLine2: "something good.",
   description:
     "Open to remote Senior React/Next.js roles — reach out directly, or grab the résumé below.",
-  links: [
+  rowsEyebrow: "Where to find me",
+  rows: [
     {
       label: "andres@castilloquesada.com",
       href: "mailto:andres@castilloquesada.com",
@@ -36,7 +39,11 @@ export const contactContent: ContactContent = {
       href: "https://linkedin.com/in/catinhocr",
       external: true,
     },
-    { label: "GitHub", href: "https://github.com/CatinhoCR", external: true },
+    {
+      label: "GitHub",
+      href: "https://github.com/CatinhoCR/castilloquesada.com",
+      external: true,
+    },
     {
       label: "Download résumé",
       href: "/andres_castillo_resume.pdf",

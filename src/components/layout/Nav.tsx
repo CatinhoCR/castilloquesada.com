@@ -7,7 +7,7 @@ import { navContent } from "@/content/nav";
   Nav — top bar, rendered once from app/layout.tsx.
 
   Server component: it holds no state of its own. The only interactive
-  parts are the links, and those are <Button variant="nav">, which is
+  parts are the links, and those are <Button variant="link">, which is
   already a client component and owns the Lenis hash-scroll handling.
 
   Sticky (not fixed) at md+ only: sticky keeps the header's box in
@@ -42,7 +42,7 @@ export default function Nav() {
           <ul className="hidden items-center gap-8 md:flex">
             {navLinks.map(({ label, href }) => (
               <li key={href}>
-                <Button href={href} variant="nav">
+                <Button href={href} variant="link">
                   {label}
                 </Button>
               </li>

@@ -30,9 +30,6 @@ const variants = {
   // Plain text link, no button chrome — pairs with the hover-underline
   // utilities (styles/utilities.css) for anchor-style CTAs.
   link: "font-mono text-small uppercase tracking-[0.12em] text-primary hover-underline hover-underline-right",
-  // Nav chrome. Routed through Button (rather than a bare next/link in
-  // Nav.tsx) purely to reuse the Lenis hash-scroll handling below.
-  nav: "font-mono text-label text-secondary hover:text-primary",
 };
 
 type Variant = keyof typeof variants;
