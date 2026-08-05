@@ -10,6 +10,7 @@ Senior Frontend Engineer & Architect / Creative Technologist.
 **[castilloquesada.com](https://castilloquesada.com)**
 
 ## 🛠 Tech Stack & Architecture
+
 - **Framework:** [Next.js](https://nextjs.org) (App Router / React 19), TypeScript
 - **Styling:** Tailwind CSS v4 (`@theme` design tokens) + SCSS Modules (Design Tokens & Keyframe Isolation)
 - **Motion Engine:** [GSAP](https://gsap.com) (ScrollTrigger) + `@gsap/react`,
@@ -18,6 +19,7 @@ Senior Frontend Engineer & Architect / Creative Technologist.
 - **Deployment** — [Vercel](https://vercel.com)
 
 ## 📐 Key Technical Highlights
+
 - **Polymorphic Architecture:** Reusable `<InfoCard />` pattern for dual-use layout stages.
 - **GSAP/Lenis Sync:** Custom RAF ticker integration preventing frame drops on High-Refresh Rate displays.
 - **Zero-CLSS Strategy:** Strict SSR/CSR layout isolation for smooth font/asset hydration.

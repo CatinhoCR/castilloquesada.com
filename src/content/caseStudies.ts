@@ -12,11 +12,11 @@ export interface CaseStudy {
 export const caseStudies: CaseStudy[] = [
   {
     id: "vans",
-    client: "Vans",
+    client: "Global Footwear Brand",
     title: "3D Shoe Customizer",
     role: "Senior Frontend Engineer, 3 years",
     problem:
-      "Vans needed a real-time 3D configurator that let millions of users personalize shoes with custom artwork — accurately projected onto curved geometry, at production scale.",
+      "The client needed a real-time 3D configurator that let millions of users personalize shoes with custom artwork — accurately projected onto curved geometry, at production scale.",
     approach:
       "Built the customizer's image library and randomizer features in Vue + Three.js, including the warping and UV-mapping logic to project 2D artwork onto 3D shoe geometry. Hardened the selection and real-time preview layer, resolving hundreds of defects across customization state and model previsualization.",
     outcome:
@@ -25,11 +25,11 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "walmart-connect",
-    client: "Walmart Connect",
+    client: "Multi-Team Retail Ad Platform",
     title: "Design System",
     role: "Technology Architect, Design System Lead",
     problem:
-      "A 3-5 engineer delivery team was rebuilding UI from scratch on every feature, with no shared source of truth across the ad platform.",
+      "A 3-5 engineer delivery team was rebuilding UI from scratch on every feature, with no shared source of truth across the retail-media platform.",
     approach:
       "Sole owner of the design system: architected and shipped the SCSS token and component library the full team built from, with themeable partials so new components composed from existing tokens instead of custom styling.",
     outcome:

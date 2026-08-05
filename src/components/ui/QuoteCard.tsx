@@ -22,7 +22,7 @@ export function QuoteCard({
 }: QuoteCardProps) {
   return (
     <p
-      className={`max-w-[70ch] border-l-2 border-accent pl-3 font-mono text-eyebrow leading-relaxed text-muted ${className}`}
+      className={`max-w-[70ch] border-l-2 border-accent pl-3 font-mono text-eyebrow leading-relaxed text-secondary ${className}`}
     >
       <span className="text-accent">
         {icon} {label}
